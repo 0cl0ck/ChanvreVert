@@ -20,5 +20,16 @@ export const Categories: CollectionConfig = {
       type: 'text',
       required: true,
     },
+    {
+      name: 'slug',
+      type: 'text',
+      required: true,
+    },
+    {
+      name: 'type',
+      type: 'select',
+      options: ['post', 'product'],
+      required: true,
+    },
   ],
 }
