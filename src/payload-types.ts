@@ -650,10 +650,23 @@ export interface Product {
     };
     [k: string]: unknown;
   };
-  price: number;
-  images: string | Media;
+  productType: 'simple' | 'variable';
+  price?: number | null;
+  variations?:
+    | {
+        name: string;
+        price: number;
+        id?: string | null;
+      }[]
+    | null;
+  images: (string | Media)[];
   categories?: (string | Category)[] | null;
   availability?: ('in-stock' | 'out-of-stock' | 'pre-order') | null;
+  meta?: {
+    title?: string | null;
+    image?: (string | null) | Media;
+    description?: string | null;
+  };
   updatedAt: string;
   createdAt: string;
 }
@@ -1138,10 +1151,25 @@ export interface UsersSelect<T extends boolean = true> {
 export interface ProductsSelect<T extends boolean = true> {
   title?: T;
   description?: T;
+  productType?: T;
   price?: T;
+  variations?:
+    | T
+    | {
+        name?: T;
+        price?: T;
+        id?: T;
+      };
   images?: T;
   categories?: T;
   availability?: T;
+  meta?:
+    | T
+    | {
+        title?: T;
+        image?: T;
+        description?: T;
+      };
   updatedAt?: T;
   createdAt?: T;
 }

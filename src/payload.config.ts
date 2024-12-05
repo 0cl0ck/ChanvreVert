@@ -15,9 +15,9 @@ import { Header } from './Header/config'
 import { plugins } from './plugins'
 import { defaultLexical } from '@/fields/defaultLexical'
 import { getServerSideURL } from './utilities/getURL'
-import Customers from './collections/customers'
-import Orders from './collections/orders'
-import Products from './collections/products'
+import Customers from './collections/Customers'
+import Orders from './collections/Orders'
+import Products from './collections/Products'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
