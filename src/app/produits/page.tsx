@@ -23,7 +23,7 @@ const ProductsPage = async () => {
 
   return (
     <div>
-      <h1>Products</h1>
+      <h1>Nos Produits</h1>
       <ul>
         {products.docs.map((product) => (
           <li key={product.id}>
