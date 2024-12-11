@@ -50,6 +50,10 @@ export const ImageMedia: React.FC<MediaProps> = (props) => {
     src = `${getClientSideURL()}${url}`
   }
 
+  if (src === '') {
+    src = null
+  }
+
   const loading = loadingFromProps || 'lazy'
 
   // NOTE: this is used by the browser to determine which image to download at different screen sizes

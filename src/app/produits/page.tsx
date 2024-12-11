@@ -3,7 +3,7 @@ import { getPayload } from 'payload'
 import { PayloadLexicalReact } from '@zapal/payload-lexical-react'
 
 import React from 'react'
-import Image from 'next/image'
+import { ProductCategoryCard } from '@/components/ProductCategoryCard'
 
 const ProductsPage = async () => {
   const payload = await getPayload({ config: payloadConfig })
@@ -40,12 +40,11 @@ const ProductsPage = async () => {
             <div>
               {Array.isArray(product.images) && product.images.length > 0 ? (
                 product.images.map((image) => (
-                  <Image
+                  <ProductCategoryCard
                     key={typeof image === 'string' ? image : image.id}
-                    src={typeof image === 'string' ? `/media/${image}` : `/media/${image.filename}`}
-                    alt={typeof image === 'string' ? 'Product Image' : image.alt || 'Product Image'}
-                    width={500}
-                    height={500}
+                    name={product.title}
+                    slug={product.id}
+                    imageUrl={typeof image === 'string' ? `/media/${image}` : `/media/${image.filename}`}
                   />
                 ))
               ) : (
