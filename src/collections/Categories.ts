@@ -31,5 +31,11 @@ export const Categories: CollectionConfig = {
       options: ['post', 'product'],
       required: true,
     },
+    {
+      name: 'image',
+      type: 'upload',
+      relationTo: 'media',
+      required: true,
+    },
   ],
 }
